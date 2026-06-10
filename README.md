@@ -92,6 +92,7 @@ See [public changelog](./docs/CHANGELOG-PUBLIC.md) for weekly repository activit
 ## Connect
 
 [![GitHub](https://img.shields.io/badge/GitHub-LouisLetcher-181717?style=flat-square&logo=github)](https://github.com/LouisLetcher)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Manuel%20H.-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/feed?nis=true)
 [![Medium](https://img.shields.io/badge/Medium-@louisletcher-000000?style=flat-square&logo=medium)](https://medium.com/@louisletcher)
 [![Collaboration](https://img.shields.io/badge/Collaborate-open%20an%20issue-238636?style=flat-square&logo=github)](https://github.com/LouisLetcher/LouisLetcher/issues/new?template=collaboration.yml)
 
