@@ -1,58 +1,66 @@
-# Hi, I'm LouisLetcher 👋
+# Manuel H.
 
-## 🚀 About Me
+**Data engineer** building measurement systems for ads — and execution systems for markets.
 
-Hello everyone,
+Munich · [VollcomDigital](https://github.com/VollcomDigital) · Python · BigQuery · Pine Script
 
-I'm Manuel, a **Data Engineer** with a strong background in marketing technology (MarTech), advertising technology (AdTech), and machine learning applications in performance marketing. Over the past decade, I've led teams focused on developing scalable, data-driven advertising solutions across various platforms, including **Google Ads, Meta, and programmatic ecosystems**.
+I spent a decade in **MarTech & AdTech** (Google Ads, Meta, programmatic) building attribution, pipelines, and ML for performance marketing. Now I apply that same rigor — idempotent data, no lookahead, hard risk limits — to **quantitative trading** and **DeFi** infrastructure.
 
-My recent technical adventures have taken me deep into the world of **quantitative trading** and **DeFi**. I’m passionate about building robust, automated trading systems and exploring the intersection of data, finance, and blockchain.
-
-## 🛠️ Top Skills & Interests
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-FFD43B?style=for-the-badge&logo=scikit-learn&logoColor=black)
-![Cloud](https://img.shields.io/badge/Cloud-GCP%20%7C%20AWS-blue?style=for-the-badge)
-![DeFi](https://img.shields.io/badge/DeFi-EF4444?style=for-the-badge)
-
-- Data Engineering & Analytics
-- Performance Marketing & AdTech
-- Machine Learning & Predictive Modeling
-- Quantitative Trading Algorithms
-- Decentralized Finance (DeFi)
-- Cloud Platforms & Big Data
-
-## 🌟 Featured Projects
-
-### [quant-system](https://github.com/LouisLetcher/quant-system)
-> Modular, scalable infrastructure for quantitative trading strategies, featuring robust data pipelines and automation for backtesting and live trading.
-
-[![quant-system stars](https://img.shields.io/github/stars/LouisLetcher/quant-system?style=social)](https://github.com/LouisLetcher/quant-system/stargazers)
-[![quant-system forks](https://img.shields.io/github/forks/LouisLetcher/quant-system?style=social)](https://github.com/LouisLetcher/quant-system/network/members)
+**Public work:** [quant-pine](https://github.com/LouisLetcher/quant-pine) · [cloudflare-control-plane](https://github.com/LouisLetcher/cloudflare-control-plane) · [docs portal](https://louisletcher.github.io/LouisLetcher/)
 
 ---
 
-### [quant-pine](https://github.com/LouisLetcher/quant-pine)
-> A collection of advanced Pine Script strategies and trading tools for TradingView, supporting research and deployment of algorithmic trading ideas.
+## What I build
 
-[![quant-pine stars](https://img.shields.io/github/stars/LouisLetcher/quant-pine?style=social)](https://github.com/LouisLetcher/quant-pine/stargazers)
-[![quant-pine forks](https://img.shields.io/github/forks/LouisLetcher/quant-pine?style=social)](https://github.com/LouisLetcher/quant-pine/network/members)
+| | |
+| --- | --- |
+| **[quant-pine](https://github.com/LouisLetcher/quant-pine)** | Pine Script strategies & indicators — the research layer for systematic trading |
+| **[cloudflare-control-plane](https://github.com/LouisLetcher/cloudflare-control-plane)** | Edge security for webhooks & APIs — WAF, Workers, Terraform |
+| **quant-system** *(private)* | Multi-asset platform: 8+ data feeds, backtesting, paper/live execution with OMS/RMS split → [architecture docs](./docs/architecture/quant-system-overview.md) |
+
+```mermaid
+flowchart LR
+  A[Pine signal] --> B[Backtest]
+  B --> C[RMS gate]
+  C --> D[OMS / live]
+```
+
+Most teams treat ads measurement and trade execution as separate worlds. I work at the overlap — where **attribution lag** looks a lot like **bar lag**, and **budget caps** look a lot like **position limits**.
+
+→ [MarTech → Quant series](./docs/community/martech-to-quant.md) · [OMS / kill-switch design](./docs/architecture/oms-rms-kill-switch.md)
 
 ---
 
-## 📊 GitHub Stats
+## Stack
 
-![LouisLetcher's GitHub Stats](https://github-readme-stats.vercel.app/api?username=LouisLetcher&show_icons=true&theme=radical)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=LouisLetcher&layout=compact&theme=radical)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-PostgreSQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white)
 
-## 🤝 Let’s Connect
+BigQuery · dbt · Polars · ML / forecasting · DeFi · Cloudflare Workers
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/feed/)
+---
 
-## 💬 Looking to Collaborate?
+## Activity
 
-I'm here to engage with fellow professionals, share insights, and learn from the collective expertise of this community. Looking forward to meaningful discussions and collaborations!
+<!-- PULSE:START -->
+See [public changelog](./docs/CHANGELOG-PUBLIC.md) for weekly repository activity (auto-generated).
+<!-- PULSE:END -->
+
+![GitHub followers](https://img.shields.io/github/followers/LouisLetcher?style=flat-square)
+![quant-pine stars](https://img.shields.io/github/stars/LouisLetcher/quant-pine?style=flat-square)
+
+---
+
+## Connect
+
+[![Medium](https://img.shields.io/badge/Medium-@louisletcher-000000?style=flat-square&logo=medium)](https://medium.com/@louisletcher)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Manuel%20H.-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/feed?nis=true)
+[![Collaborate](https://img.shields.io/badge/Collaborate-open%20issue-238636?style=flat-square&logo=github)](https://github.com/LouisLetcher/LouisLetcher/issues/new?template=collaboration.yml)
+
+Quant infra, data pipelines, Pine Script, or MarTech measurement — [open an issue](https://github.com/LouisLetcher/LouisLetcher/issues/new?template=collaboration.yml) to start a conversation.
 
 ---
 
