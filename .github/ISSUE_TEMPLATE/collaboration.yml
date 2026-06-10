@@ -1,0 +1,45 @@
+name: Collaboration / Consulting
+description: Propose collaboration, consulting, or architecture review
+title: "[Collab] "
+labels: ["collaboration"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out. For security issues, see [SECURITY.md](https://github.com/LouisLetcher/LouisLetcher/blob/main/SECURITY.md).
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area of interest
+      options:
+        - Quant / trading infrastructure
+        - Data engineering / pipelines
+        - MarTech / AdTech measurement
+        - Pine Script / TradingView
+        - Cloudflare / edge security
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What would you like to explore or build together?
+    validations:
+      required: true
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Timeline & scope
+      description: Rough timeline, budget range (if consulting), or open-source contribution scope
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Acknowledgment
+      options:
+        - label: I understand private repos (quant-system) are not accessible via this issue
+          required: true

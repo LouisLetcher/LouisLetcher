@@ -1,0 +1,2 @@
+[console_scripts]
+profile-ops = profile_ops.cli:main

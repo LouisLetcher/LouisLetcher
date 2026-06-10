@@ -1,0 +1,10 @@
+# GitHub Pages — Jekyll defaults for docs/ portal
+title: LouisLetcher Portal
+description: Data engineering, quantitative trading, and edge infrastructure
+theme: jekyll-theme-minimal
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
