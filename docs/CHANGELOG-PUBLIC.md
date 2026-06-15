@@ -3,19 +3,21 @@
 Auto-generated weekly pulse of public repository activity for [LouisLetcher](https://github.com/LouisLetcher).
 
 <!-- PULSE-AUTO:START -->
-_Last updated: manual seed — first automated run pending CI._
+_Last updated: 2026-06-15 10:11 UTC (automated)._
 
-## Week of 2026-06-10
+## Week of 2026-06-15
 
-### LouisLetcher (this repo)
-- Profile hub restructure: docs portal, SECURITY.md, CI workflows
-
-### [quant-pine](https://github.com/LouisLetcher/quant-pine)
-- Active · 19 stars · Pine Script strategies
+### [LouisLetcher](https://github.com/LouisLetcher/LouisLetcher)
+- GitHub profile — data engineering, MarTech/AdTech, quantitative trading, and DeFi.
+- Stars: 0 · Last push: 2026-06-10
 
 ### [cloudflare-control-plane](https://github.com/LouisLetcher/cloudflare-control-plane)
-- Active · Terraform + Workers edge stack
+- Terraform-managed Cloudflare stack for personal domains: email routing, safe zone adoption, WAF lockdown, shared Worker KV, and deploy tooling.
+- Stars: 0 · Last push: 2026-06-08
 
+### [quant-pine](https://github.com/LouisLetcher/quant-pine)
+- Pine Script strategies and indicators for TradingView — algorithmic trading, technical analysis, and ready-to-use scripts.
+- Stars: 19 · Last push: 2026-06-08
 <!-- PULSE-AUTO:END -->
 
 ---
