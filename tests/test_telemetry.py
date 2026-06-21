@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import logging
-from io import StringIO
 
 from opentelemetry import trace
 from opentelemetry.sdk.trace import TracerProvider

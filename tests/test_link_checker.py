@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import FrozenInstanceError
 from pathlib import Path
 
 import httpx
@@ -87,5 +88,5 @@ def test_should_skip_template_placeholders() -> None:
 
 def test_link_reference_frozen() -> None:
     ref = LinkReference(source=Path("a.md"), url="u", line=1)
-    with pytest.raises(Exception):
+    with pytest.raises(FrozenInstanceError):
         ref.url = "other"  # type: ignore[misc]
