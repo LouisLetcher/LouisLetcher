@@ -4,8 +4,9 @@
 
 Munich · [VollcomDigital](https://github.com/VollcomDigital) · [Docs portal](https://louisletcher.github.io/LouisLetcher/) · Python · BigQuery · Pine Script
 
-A decade in **MarTech & AdTech** (Google Ads, Meta, programmatic) building attribution, data pipelines, and ML for performance marketing — now applying that same rigor to **quantitative trading** and **DeFi** infrastructure.
+I build **MarTech & AdTech data systems** professionally — first-party data platforms, server-side tracking, and measurement on Google Cloud — and bring the same rigor to **systematic trading** and **DeFi** infrastructure. Idempotent data, no lookahead, hard risk limits — in both.
 
+![Google Cloud Professional Data Engineer](https://img.shields.io/badge/Google_Cloud-Professional_Data_Engineer-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-PostgreSQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
 ![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
@@ -33,10 +34,11 @@ I turn messy data into systems that make decisions you can trust in production.
 
 | Capability | What you get |
 | --- | --- |
-| **Data platforms & pipelines** | BigQuery · dbt · Polars — idempotent, tested, observable (OpenTelemetry tracing) |
-| **Measurement & attribution** | MMM, incrementality, server-side tagging, performance-marketing ML |
-| **ML / forecasting** | Feature pipelines with leakage control and walk-forward validation |
-| **Quant & execution infra** | Backtesting, OMS/RMS, paper↔live parity, drawdown kill-switches |
+| **First-party data & activation** | GCP customer-data platforms, server-side tracking, CDP integration — GDPR/E-Privacy compliant |
+| **Measurement & attribution** | server-side GTM/GA4, Google & Meta conversion APIs, consent management, recovering ITP/ETP signal loss |
+| **Data platforms & pipelines** | BigQuery · Airflow · dbt — idempotent, tested, observable (OpenTelemetry tracing) |
+| **ML / AI data foundations** | feature & training-data pipelines with leakage control and walk-forward validation |
+| **Quant & execution infra** | backtesting, OMS/RMS, paper↔live parity, drawdown kill-switches |
 | **Edge security** | Cloudflare Workers · WAF · Terraform for webhooks & APIs |
 
 → [**Start an engagement**](https://github.com/LouisLetcher/LouisLetcher/issues/new?template=collaboration.yml) · browse the [architecture docs](./docs/index.md) to see how I work before we talk.
@@ -68,6 +70,22 @@ Further reading: [MarTech → Quant series](./docs/community/martech-to-quant.md
 
 ---
 
+## Experience
+
+**Data / Web-Analytics & Tracking Engineer — [Vollcom Digital](https://github.com/VollcomDigital), Munich · since 2018**
+
+| When | Engagement | Stack |
+| --- | --- | --- |
+| 2024–now | First-party data activation & server-side tracking for a **major European electronics retailer** — GDPR-compliant customer-data pipelines feeding personalized campaigns | GCP · BigQuery · server-side GTM · Cloud Functions · Airflow · dbt · Meta CAPI |
+| 2020–2023 | Tag-management & web-tracking platform for the same retailer — server-side tracking to recover ITP/ETP signal loss, consent management | GTM · Tealium · OneTrust · Usercentrics · GA4 · BigQuery |
+| 2019–now | Campaign data warehouse for a **global pharmaceutical company** — unifying Facebook / TV / web into one analytics layer | GCP · BigQuery · Airflow · ETL |
+| 2018–2021 | CRM + web data warehouse for a **medical-technology manufacturer** — Salesforce / Zoho / web tracking into one reporting layer | GCP · Salesforce · Zoho CRM · Fivetran · Python |
+
+**Certifications** — Google Cloud Professional Data Engineer · Google Tag Manager & GA4 Advanced (2024) · IBM Full-Stack JavaScript Developer · IBM DevOps & Software Engineering · IBM IT Project Manager
+**Languages** — German (native) · English (business-fluent) · Spanish (basic)
+
+---
+
 ## How I work
 
 - **Idempotent data** — same inputs, same outputs; re-runs are bit-identical.
@@ -87,7 +105,10 @@ This profile hub itself is built that way — see the [`profile_ops`](./tools/pr
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white)
 
-BigQuery · dbt · Polars · ML / forecasting · DeFi · Cloudflare Workers · Pine Script
+**Cloud & warehouses** — GCP (BigQuery, Pub/Sub, Cloud Functions, Kubernetes) · AWS · Azure · Snowflake · Redshift
+**Pipelines & processing** — Apache Airflow · dbt · Spark / PySpark · Kafka · Fivetran · Polars · Pandas
+**Measurement & CDP** — server-side GTM · Tealium · GA4 / Adobe Analytics · Segment · mParticle · Adobe RT-CDP · consent (OneTrust, Usercentrics) · GDPR / E-Privacy
+**Infra & languages** — Terraform · Docker · Kubernetes · Python · SQL · JavaScript · Pine Script · Cloudflare Workers
 
 ---
 

@@ -2,6 +2,8 @@
 
 Data · AI · Quant engineering. I build **measurement systems for ads** and **execution systems for markets** — same discipline (idempotent data, no lookahead, hard risk limits), two domains.
 
+**Google Cloud Professional Data Engineer** · MarTech/AdTech data engineering since 2018 · systematic-trading infrastructure.
+
 [GitHub](https://github.com/LouisLetcher) · [VollcomDigital](https://github.com/VollcomDigital) · [LinkedIn](https://www.linkedin.com/in/manuelheck)
 
 ---
