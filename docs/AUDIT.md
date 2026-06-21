@@ -44,13 +44,15 @@ Severity legend: 🔴 High · 🟠 Medium · 🟢 Low / polish
   full external check on every push and PR to `main`. Requests were sent with
   no `User-Agent`, and the README links to hosts that reject anonymous
   automated requests (e.g. LinkedIn returns `999`, Medium can return `403`).
-  This makes CI fail for reasons unrelated to the change under review.
-  - _Partially fixed:_ requests now send an identifying `User-Agent`.
-  - _Recommended next:_ treat transient/bot-block codes (`403`, `429`, `999`)
-    as warnings rather than hard failures, add a small retry with backoff for
-    `5xx`/timeouts, and consider running the **full external sweep on a
-    schedule** while PR/push runs validate **local links only** (fast and
-    deterministic). This keeps PR signal trustworthy.
+  This makes CI fail for reasons unrelated to the change under review — and in
+  fact `main` was already red on this check (the private `quant-system` repo
+  and the Medium profile can never pass an anonymous request).
+  - _Fixed:_ requests now send an identifying `User-Agent`; PR/push CI
+    validates **local links only** (fast, deterministic), and a separate
+    **scheduled, non-blocking** workflow (`link-check-external.yml`) runs the
+    full external sweep and reports findings to the run summary.
+  - _Recommended next:_ for the scheduled sweep, optionally treat transient
+    codes (`429`, `5xx`) with a retry/backoff to further reduce noise.
 - 🟢 **Telemetry always exports to the console.** `init_tracer` unconditionally
   installs a `ConsoleSpanExporter`, so every CLI run (including CI) prints span
   JSON to stdout. Consider gating the exporter behind an env var
@@ -102,7 +104,7 @@ Severity legend: 🔴 High · 🟠 Medium · 🟢 Low / polish
 | ---- | ------ |
 | Tooling | Added `ruff` + `mypy` config to `pyproject.toml` and a `lint.yml` workflow that runs both on push/PR |
 | Tooling | Removed two unused imports flagged by `ruff` |
-| Reliability | Link checker now sends an identifying `User-Agent`; `O(n²)` source lookup replaced with a map |
+| Reliability | Link checker now sends an identifying `User-Agent`; `O(n²)` source lookup replaced with a map; CI split into a local-link merge gate plus a scheduled, non-blocking external sweep |
 | Code quality | Simplified `_should_skip`; tightened the frozen-dataclass test to assert `FrozenInstanceError` |
 | Security | Added `dependabot.yml` (pip + github-actions) and a CodeQL workflow |
 | Docs | Corrected the misleading "append above" note in `CHANGELOG-PUBLIC.md`; added this audit |
@@ -112,8 +114,11 @@ All changes are covered by the existing suite: `ruff check`, `mypy`, and
 
 ## Recommended next steps (prioritized)
 
-1. 🟠 Split CI link checking: local links on every PR/push; full external sweep
-   on a schedule, with retries and lenient handling of bot-block status codes.
+1. 🟢 Fix the genuinely-broken content links surfaced by the sweep: the
+   `discussions/categories/security` URL in `SECURITY.md` (Discussions/category
+   not set up) and the `louisletcher.github.io/LouisLetcher/` portal link
+   (verify Pages is deployed). The private-repo and Medium links are expected
+   to remain "unreachable" anonymously.
 2. 🟢 Add a `LICENSE` (owner decision) and a short `CONTRIBUTING.md`.
 3. 🟢 Pin GitHub Actions to commit SHAs and let Dependabot bump them.
 4. 🟢 Gate the OpenTelemetry console exporter behind an env var / OTLP endpoint.

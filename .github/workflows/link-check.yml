@@ -23,8 +23,12 @@ jobs:
       - name: Install dependencies
         run: pip install -e ".[dev]"
 
-      - name: Validate markdown links
-        run: python -m profile_ops.cli check-links --root .
+      # Local-link validation is deterministic and safe to gate merges on.
+      # The full external sweep runs on a schedule (link-check-external.yml)
+      # because public hosts (Medium, LinkedIn, private repos) bot-block or
+      # 404 anonymous CI requests, producing false failures.
+      - name: Validate local markdown links
+        run: python -m profile_ops.cli check-links --root . --skip-external
 
       - name: Run tests
         run: pytest tests/ -v --cov=profile_ops --cov-report=term-missing --cov-fail-under=80
