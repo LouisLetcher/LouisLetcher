@@ -13,7 +13,7 @@ This repository is a public profile and documentation hub. Security updates appl
 **Do not** open a public GitHub issue for security-sensitive reports.
 
 1. Open a [private security advisory](https://github.com/LouisLetcher/LouisLetcher/security/advisories/new) on this repository, **or**
-2. Contact via [GitHub Discussions — Security](https://github.com/LouisLetcher/LouisLetcher/discussions/categories/security) if advisories are unavailable.
+2. If advisories are unavailable, contact the maintainer privately via [LinkedIn](https://www.linkedin.com/in/manuelheck).
 
 Include:
 
