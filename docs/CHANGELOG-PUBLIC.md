@@ -22,4 +22,6 @@ _Last updated: 2026-06-15 10:11 UTC (automated)._
 
 ---
 
-Older entries will append above this line on each weekly workflow run.
+The block between the `PULSE-AUTO` markers is regenerated in place on each
+weekly workflow run; it reflects the latest snapshot rather than an appended
+history.

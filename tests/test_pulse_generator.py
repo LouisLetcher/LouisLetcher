@@ -10,13 +10,13 @@ import respx
 from profile_ops.pulse_generator import (
     PULSE_END,
     PULSE_START,
+    RepoActivity,
+    _parse_github_ts,
     fetch_repo_activity,
     generate_pulse_file,
     render_pulse_section,
     upsert_pulse_markers,
-    _parse_github_ts,
 )
-from profile_ops.pulse_generator import RepoActivity
 
 
 def test_parse_github_ts_z_suffix() -> None:
@@ -149,6 +149,5 @@ def test_generate_pulse_file_writes_markers(tmp_path: Path) -> None:
 def test_fetch_repo_activity_raises_on_http_error() -> None:
     with respx.mock:
         respx.get("https://api.github.com/repos/o/r").mock(return_value=httpx.Response(500))
-        with httpx.Client() as client:
-            with pytest.raises(httpx.HTTPStatusError):
-                fetch_repo_activity("o", ("r",), client=client)
+        with httpx.Client() as client, pytest.raises(httpx.HTTPStatusError):
+            fetch_repo_activity("o", ("r",), client=client)

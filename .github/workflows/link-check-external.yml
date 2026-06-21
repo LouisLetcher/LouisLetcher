@@ -1,0 +1,54 @@
+name: Link Check (external sweep)
+
+# Full external link validation. Runs on a schedule (not on PRs) and is
+# non-blocking: public hosts such as Medium and LinkedIn bot-block anonymous
+# requests, and intentionally-private repos 404, so failures here are advisory
+# rather than a merge gate. Findings are written to the run summary.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  external-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Full external link sweep (advisory)
+        id: sweep
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python -m profile_ops.cli check-links --root . 2> sweep.log
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Publish findings to job summary
+        if: always()
+        run: |
+          {
+            echo "## External link sweep"
+            echo ""
+            if grep -q "link failed" sweep.log; then
+              echo "Broken or unreachable external links detected (advisory):"
+              echo ""
+              echo '```'
+              grep "link failed" sweep.log || true
+              echo '```'
+              echo ""
+              echo "_Note: Medium/LinkedIn and intentionally-private repositories may appear here due to bot-blocking or access restrictions and can be ignored._"
+            else
+              echo "All external links reachable. ✅"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -21,6 +21,9 @@ HTML_LINK_RE = re.compile(r"""href=["']([^"']+)["']""", re.IGNORECASE)
 SKIP_SCHEMES = {"", "#"}
 SKIP_PREFIXES = ("mailto:", "javascript:")
 
+# Some hosts reject requests without a User-Agent; identify the checker explicitly.
+USER_AGENT = "profile-ops-link-checker/0.1 (+https://github.com/LouisLetcher/LouisLetcher)"
+
 
 @dataclass(frozen=True)
 class LinkReference:
@@ -52,9 +55,8 @@ def _should_skip(url: str) -> bool:
     parsed = urlparse(url)
     if parsed.scheme in SKIP_SCHEMES and not url.startswith("/"):
         return False
-    if parsed.scheme and parsed.scheme not in {"http", "https", ""}:
-        return True
-    return False
+    # Skip non-web schemes (tel:, ftp:, etc.); keep http(s) and relative paths.
+    return bool(parsed.scheme) and parsed.scheme not in {"http", "https", ""}
 
 
 def extract_links(root: Path, extensions: frozenset[str] = frozenset({".md", ".html", ".yml"})) -> list[LinkReference]:
@@ -120,9 +122,17 @@ def check_links(
         refs = extract_links(root)
         unique_urls = sorted({r.url for r in refs})
         span.set_attribute("unique_urls", len(unique_urls))
+        # Map each URL to its first source once (avoids an O(n^2) rescan per link).
+        source_by_url: dict[str, Path] = {}
+        for ref in refs:
+            source_by_url.setdefault(ref.url, ref.source)
         results: list[LinkCheckResult] = []
         owns_client = client is None
-        http = client or httpx.Client(follow_redirects=True, timeout=15.0)
+        http = client or httpx.Client(
+            follow_redirects=True,
+            timeout=15.0,
+            headers={"User-Agent": USER_AGENT},
+        )
         try:
             for url in unique_urls:
                 with tracer.start_as_current_span("link_checker.check_one") as child:
@@ -147,7 +157,7 @@ def check_links(
                         except httpx.HTTPError as exc:
                             results.append(LinkCheckResult(url=url, ok=False, status_code=None, error=str(exc)))
                     else:
-                        source = next(r.source for r in refs if r.url == url)
+                        source = source_by_url[url]
                         local = resolve_local_path(root, url, source)
                         ok = local is not None
                         results.append(
