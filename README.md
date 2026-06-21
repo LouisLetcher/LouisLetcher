@@ -76,6 +76,7 @@ Further reading: [MarTech → Quant series](./docs/community/martech-to-quant.md
 
 | When | Engagement | Stack |
 | --- | --- | --- |
+| 2025–now | Marketing data warehouse & multi-brand tracking for a **German travel company** (2 brands, 6 domains) — unifying campaign, web, and conversion data across brands and domains into one analytics layer | GCP · BigQuery · server-side GTM · Cloud Functions · Airflow · dbt · Meta CAPI |
 | 2024–now | First-party data activation & server-side tracking for a **major European electronics retailer** — GDPR-compliant customer-data pipelines feeding personalized campaigns | GCP · BigQuery · server-side GTM · Cloud Functions · Airflow · dbt · Meta CAPI |
 | 2020–2023 | Tag-management & web-tracking platform for the same retailer — server-side tracking to recover ITP/ETP signal loss, consent management | GTM · Tealium · OneTrust · Usercentrics · GA4 · BigQuery |
 | 2019–now | Campaign data warehouse for a **global pharmaceutical company** — unifying Facebook / TV / web into one analytics layer | GCP · BigQuery · Airflow · ETL |
