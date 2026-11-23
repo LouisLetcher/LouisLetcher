@@ -1,4 +1,4 @@
-# Manuel H. — I turn messy data into decisions you can trust
+# Manuel H. - I turn messy data into decisions you can trust
 
 Munich · [Vollcom Digital](https://github.com/VollcomDigital) · Google Cloud Professional Data Engineer
 
