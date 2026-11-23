@@ -1,16 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "One grouped PR per week keeps CI minutes low.",
-  "extends": [
-    "config:recommended",
-    ":dependencyDashboard",
-    ":semanticCommits",
-    "helpers:pinGitHubActionDigests",
-    "group:allNonMajor"
-  ],
-  "timezone": "Europe/Berlin",
-  "schedule": ["before 6am on monday"],
-  "labels": ["dependencies"],
+  "extends": ["github>LouisLetcher/factory"],
   "prConcurrentLimit": 2,
   "packageRules": [
     {
@@ -19,8 +9,5 @@
       "automerge": true,
       "platformAutomerge": true
     }
-  ],
-  "vulnerabilityAlerts": {
-    "labels": ["security"]
-  }
+  ]
 }
